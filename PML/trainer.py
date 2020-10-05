@@ -28,7 +28,7 @@ def train(net,ds,p=500):
 
 
 def load_dataset():
-	file=open("parse_int_1.data",'r')
+	file=open("parse_int.data",'r')
 	for line in file.readlines():
 		data_p = [int(x) for x in line.strip().split(" ") if x!=""]
 		indata = tuple(data_p[:10000])

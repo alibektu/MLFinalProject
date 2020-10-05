@@ -42,12 +42,6 @@ def printI():
 def forward():
 	cur_ins("forward")
 	forw.turn(70,40)
-'''	m_lef.run(30)
-	m_rig.run(30)
-	time.sleep(1)
-	m_lef.brake()
-	m_rig.brake()
-'''	
 
 def back():  #has to be fixed using sync
 	cur_ins("back")
@@ -67,18 +61,12 @@ def right():
 	m_lef.turn(-30, 30)
 	m_rig.turn(30,30)
 
-def test_d():
+def test_data():
 	pic = urllib.urlretrieve('http://192.168.2.132:8080/photo.jpg')
 	img = Image.open(pic[0])
-	
-	#box = (0, 120, 320, 240)
-	#area = img.crop(box)
-	#area.save('00.jpg', img.format)
-	#im = Image.open("00.jpg")
+
 	nim = img.convert('L')
 	nim2 = nim.resize((100,100))
-
-	#file_ = open("test_pixel_data.txt",'w')
 
 	counter = 0
 	pixels = []
@@ -88,31 +76,15 @@ def test_d():
 			pixelValue = nim2.getpixel(coordinate);
 			pixels.append(pixelValue);
 			counter = counter+1;
-			#file_.write(str(pixels[counter-1])+" ")
-	#file_.write("\n")
 
-	file=open("test.data",'r')
 	indata = tuple(pixels[:10000])
 
-	#nim2.save("00.jpg")
-	
 	return indata
-	#fd_img.close()
 
 net = NetworkReader.readFrom('network.xml')
 
-'''
-file=open("test.data",'r')
-line1=file.readlines()
-line = line1[0];
-data_p = [float(x) for x in line.strip().split(" ") if x!=""]
-indata = tuple(data_p[:10000])
-#print (indata)
-'''
-
-
 while True:
-	result = net.activate(test_d())
+	result = net.activate(test_data())
 	predicted_inst = result.argmax()
 	print(predicted_inst)
 	if predicted_inst == 0:

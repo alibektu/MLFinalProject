@@ -15,9 +15,9 @@ const KEY_DOWN_VALUE = "0 1 0 0";
 const KEY_RIGHT_VALUE = "0 0 0 1";
 const KEY_LEFT_VALUE = "0 0 1 0";
 
-const instructionsFile = "instr_1.data";
-const pixedDataFile = "pixel_data_1.txt";
-const mappedInstructionsFile = "parse_int_1.data";
+const instructionsFile = "instr.data";
+const pixedDataFile = "pixel_data.txt";
+const mappedInstructionsFile = "parse_int.data";
 
 int main() {
 	ifstream inFil;

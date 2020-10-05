@@ -64,7 +64,7 @@ def capture(x):
 
 
 def key_collector(win):
-	file = open("instr_1.data",'w')
+	file = open("instr.data",'w')
 	win.nodelay(True)
 	x=0
 	while True:

@@ -1,6 +1,5 @@
 from multiprocessing import Pool
 from PIL import Image
-#from resizeimage import resizeimage
 import urllib
 import os
 
@@ -15,8 +14,6 @@ def test_d():
 	nim = im.convert('L')
 	nim2 = nim.resize((100,100))
 
-	#file_ = open("test_pixel_data.txt",'w')
-
 	counter = 0
 	pixels = []
 	for i in range(100):
@@ -25,15 +22,11 @@ def test_d():
 			pixelValue = nim2.getpixel(coordinate);
 			pixels.append(pixelValue);
 			counter = counter+1;
-			#file_.write(str(pixels[counter-1])+" ")
-	#file_.write("\n")
 
 	file=open("test.data",'r')
 	indata = tuple(pixels[:10000])
 
-	#nim2.save("00.jpg")
-	
 	return indata
-	#fd_img.close()
 
-print test_d()
+
+print (test_d())
