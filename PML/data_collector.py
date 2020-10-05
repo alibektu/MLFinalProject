@@ -9,16 +9,19 @@ import urllib
 from PIL import Image
 import time
 
+#Locate the NXT device
 b = find_one_brick()
+#Beep to show device has been connected
 b.play_tone(200,200)
 
+#initialization of device motors
 left_motor = Motor(b,PORT_B)
 right_motor = Motor(b,PORT_A)
 
 #synchronize the motors
-forw = nxt.SynchronizedMotors(right_motor,left_motor,0)
-lef_ = nxt.SynchronizedMotors(left_motor,right_motor,20)
-rig_ = nxt.SynchronizedMotors(right_motor,left_motor,20)
+forward = nxt.SynchronizedMotors(right_motor,left_motor,0)
+left = nxt.SynchronizedMotors(left_motor,right_motor,20)
+right = nxt.SynchronizedMotors(right_motor,left_motor,20)
 
 
 current_instruction=""
