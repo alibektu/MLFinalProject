@@ -186,6 +186,7 @@ The network successfully navigated single and double roads and object and stop s
 # Acknowledgement
 We will like to express our sincere gratitude to Professor Sung Ju Hwang for the insightful lectures he provided on machine learning during the 2016 First semester period. Also his feedback during the initial stages were extremely helpful.
 
-
+# Video Result
+https://drive.google.com/file/d/0BwjFCbTjpA7YR1FZZWZuRnZhWkE/view?usp=sharing
 
 
